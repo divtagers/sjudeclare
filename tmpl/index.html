@@ -23,9 +23,9 @@
         <button type="button" id="main-submit" class="btn btn-primary btn-lg btn-block">{{ submit_btn }}</button>
         <br>
         <!--posts-->
-        {{ for post in data }}
-        <p class="lead">{{ data.text }}</p>
-        {{ endfor }}
+        {% for post in data %}
+        <p class="lead">{{ post.text }}</p>
+        {% endfor %}
         <!--js-->
         <script src="/s/js/jquery.min.js"></script>
         <script src="/s/js/custom.js"></script>
