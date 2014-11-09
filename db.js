@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/declare');
 
-var Post = mongoose.model('Post', { 
+var Post = mongoose.model('posts', { 
 									text: String,
 									date: { type: Date, default: Date.now }
 								});
@@ -15,5 +15,5 @@ exports.insertData = function (post, cb) {
 
 exports.getData = function (cb) {
 	
-	Post.find({}, cb);
+	Post.find({}).sort({ date: -1 }).exec(cb);
 } 

@@ -13,9 +13,9 @@ $('#main-submit').click(function () {
 			data: {
 				text: text
 			},
-			status: function () {
-				//alert('성공적으로 작성되었습니다.');
-				location.reload();
+			success: function () {
+				alert('성공적으로 작성되었습니다.');
+				window.location.reload();
 			},
 			error: function () {
 				alert('글 작성에 실패하였습니다. 누군가 방해를 하는것 같습니다. 곧 고치도록 하겠습니다.');

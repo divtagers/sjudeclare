@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({
 //http ops
 app.get('/', function (req, res) {
 
-	db.getData(function (data) {
+	db.getData(function (err, data) {
 
 		content['data'] = data;
 		res.render('index', content);
@@ -44,6 +44,7 @@ app.post('/api/post', function (req, res) {
 	} else {
 
 		db.insertData(text, function (err, r) {
+
 			if (!err) {
 				res.sendStatus(200);
 			} else {
