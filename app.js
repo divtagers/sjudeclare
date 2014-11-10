@@ -13,9 +13,7 @@ var app = express();
 app.engine('html', swig.renderFile);
 app.set('views', path.join(__dirname, './tmpl'));
 app.set('view engine', 'html');
-swig.setDefaults({
-	cache: false
-});
+app.set('view cache', true);
 
 //static file config
 app.use('/s', express.static(path.join(__dirname, './tmpl/s')));
