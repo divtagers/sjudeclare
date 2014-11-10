@@ -23,9 +23,12 @@
         <button type="button" id="main-submit" class="btn btn-primary btn-lg btn-block">{{ submit_btn }}</button>
         <br>
         <!--posts-->
+        {% autoescape false %}
         {% for post in data %}
+        <p class="lead"><b>{{ post.easydate }}</b></p>
         <p class="lead">{{ post.text }}</p>
         {% endfor %}
+        {% endautoescape %}
         <!--js-->
         <script src="/s/js/jquery.min.js"></script>
         <script src="/s/js/custom.js"></script>
